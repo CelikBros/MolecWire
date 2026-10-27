@@ -3,7 +3,7 @@
 **Status:** Discovery / architecture definition
 **Repository:** `CelikBros/MolecWire`
 **Product:** MolecWire
-**Document version:** 0.2 — 2026-10-27
+**Document version:** 0.3 — 2026-10-27
 **Primary language of this document:** English
 
 > **Discovery update:** Local BioExamine and Kapsora source trees were inspected on 2026-10-27. Both use Go and PostgreSQL/pgx. Findings, concrete paths and limitations are in [technology-comparison.md](docs/technology-comparison.md). Kapsora has a heavily modified worktree; observations are not a clean-release or production audit. [Architecture](docs/architecture.md) and the [first ten implementation issues](docs/mvp-roadmap.md) are proposals for review. No application is implemented.
@@ -71,15 +71,16 @@ Every ingested item should capture provenance: original URL or message identifie
 - Comply with copyright, licensing, website terms, privacy, email-security rules and applicable laws.
 - Require explicit roles and permissions for publishing, edits, retractions and rule changes.
 - Every publication decision and AI processing step must be auditable.
-- Approval binds the exact immutable revision and locale. Replacement edits require new approval; only an explicit published revision pointer may appear in public pages, search or feeds.
+- Approval binds the complete immutable review package: article content and locale, claim wording, evidence associations and assessment versions. Replacement edits require new approval; later evidence updates open a review task without rewriting the historical package.
+- Only an explicit published revision pointer may appear in public pages, search or feeds. Publication state has a monotonic version so delayed events cannot restore retracted or superseded content.
 
 ## 7. Preferred technical direction (provisional)
 
 **Backend: Go-first modular monolith.** Source inspection confirms Go in both references. Use separate API and worker entrypoints sharing application/domain packages. Kapsora's chi/pgx/sqlc/golang-migrate conventions are the leading concrete stack candidate; BioExamine's standard ServeMux and handwritten SQL are a smaller alternative. Confirm the choice at architecture review, rather than copying unrelated modules.
 
-**Database: PostgreSQL.** Keep the schema and indexing strategy reviewable. Reuse proven database patterns from existing projects where appropriate.
+**Database: PostgreSQL.** Keep the schema and indexing strategy reviewable. Adapt source-observed database patterns from existing projects; their production reliability has not been established by this discovery.
 
-**Frontend:** React/TypeScript with Vite is the reference-aligned newsroom candidate. Public article rendering must support crawlable content, stable URLs and locale metadata; select its rendering strategy during foundation review. Next.js is not an approved requirement.
+**Frontend:** Recommend React/TypeScript with Vite for the newsroom and Go-rendered public pages using `html/template` for the initial news site. The public rendering choice is a MolecWire proposal, not an observed reference convention. It supplies crawlable content, stable URLs and locale metadata within the Go runtime; reconsider only if confirmed interaction requirements justify another rendering runtime.
 
 **Async jobs and scheduling:** PostgreSQL durable jobs with leases, bounded retries and idempotent handlers, plus a transactional publication outbox. Kapsora implements a relevant outbox/worker pattern; BioExamine's separate worker is currently idle. Delivery is at least once. Redis is not needed by the initial proposal.
 
@@ -152,7 +153,7 @@ Before selecting a framework or generating application code:
 
 **Phase 1 — Foundation:** Set up repository structure, Go service, database migrations, authentication, CI/CD and observability.
 
-**Phase 2 — Editorial MVP:** Manual entry, pilot RSS/API sources, dedicated email ingestion, deduplication, source-linked drafts, review and public publication. Email is required before MVP exit.
+**Phase 2 — Editorial MVP:** Validate manual entry → evidence → human approval → public page → correction first. Add pilot RSS/API sources, dedicated email ingestion and AI drafting through the same services. Email and AI assistance remain required before MVP exit, but neither blocks the first manual publication workflow.
 
 **Phase 3 — Controlled operations:** Expand approved sources, strengthen evaluations and quality dashboards, and exercise correction/retraction, retention and recovery procedures. Human publication approval remains mandatory throughout MVP.
 
@@ -163,7 +164,7 @@ Before selecting a framework or generating application code:
 - Which country/region and primary language at launch?
 - Which sources and feeds are licensed/permitted and most important?
 - Will external submissions be public, partner-only or staff-only?
-- Which news categories require mandatory human sign-off?
+- Which news categories require a second, independent reviewer in addition to the human approval mandatory for every MVP publication?
 - Which existing reference project (BioExamine or Kapsora) is the preferred architectural baseline?
 - What infrastructure, hosting and identity providers are currently standardized?
 - Is the platform free, subscription-based or a hybrid?
@@ -183,4 +184,4 @@ Architecture work is complete only when Codex can provide:
 
 ## 16. Public product reference
 
-At the owner's request, [Kantan News](https://kantan.news/) was inspected as an additional product reference on 2026-10-27. The public metadata and search-indexed article examples show a relevant news-feed, AI-disclosure and source-link presentation pattern. Live visual rendering was unavailable; backend, permissions and editorial review enforcement were not verified. See the [bounded Kantan review](docs/technology-comparison.md#kantan-news-public-product-reference) for observations and limits. Its content accuracy is not assumed and its features do not automatically expand MVP scope.
+At the owner's request, [Kantan News](https://kantan.news/) was inspected as an additional product reference on 2026-10-27. A second pass accessed its public About, Terms and Privacy content through the same unauthenticated endpoints used by its frontend, plus a single public news item. Its Terms explicitly state editorial oversight; its Privacy policy distinguishes locally processed assistant queries from news-production processing with external-provider fallback. These are publisher declarations, not independently verified enforcement. Live visual rendering remained unavailable after retry; backend source, source permissions and content accuracy were not verified. See the [Kantan review and evidence](docs/technology-comparison.md#kantan-news-public-product-reference). Its features do not automatically expand MVP scope.

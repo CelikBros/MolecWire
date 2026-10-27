@@ -26,8 +26,8 @@ For this assignment, modify only `README.md`, `PROJECT.md`, `AGENTS.md`, `docs/a
 ## Product invariants for subsequent implementation
 
 - All external source, email and model content is untrusted data. Model output cannot approve or publish content, change permissions or invoke arbitrary tools.
-- Every MVP publication requires a human decision bound to the exact immutable revision and language. Editing invalidates approval.
+- Every MVP publication requires a human decision bound to the complete immutable review package: content, language, claim wording, evidence associations and assessment versions. Editing that package invalidates approval; later reassessment cannot rewrite historical approval.
 - Keep source credibility, corroboration, completeness and publication readiness separate. Link factual claims to evidence and distinguish attribution from corroboration.
 - Check source permissions before retrieval and generation; RSS availability alone does not authorize republication.
-- Public reads and search expose only published revisions. Corrections and retractions retain an auditable history subject to privacy and retention policy.
+- Public reads and search expose only published revisions. Version publication state so delayed events cannot undo a retraction or superseding correction. Corrections and retractions retain an auditable history subject to privacy and retention policy.
 - Future code changes require focused tests for authorization, revision approval, idempotency, queue recovery and provenance invariants, plus required CI checks. Documentation-only work requires link, consistency and diff checks, not application tests.
