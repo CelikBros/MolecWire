@@ -3,7 +3,7 @@
 **Status:** Discovery / architecture definition
 **Repository:** `CelikBros/MolecWire`
 **Product:** MolecWire
-**Document version:** 0.3 — 2026-10-27
+**Document version:** 0.4 — 2026-10-28
 **Primary language of this document:** English
 
 > **Discovery update:** Local BioExamine and Kapsora source trees were inspected on 2026-10-27. Both use Go and PostgreSQL/pgx. Findings, concrete paths and limitations are in [technology-comparison.md](docs/technology-comparison.md). Kapsora has a heavily modified worktree; observations are not a clean-release or production audit. [Architecture](docs/architecture.md) and the [first ten implementation issues](docs/mvp-roadmap.md) are proposals for review. No application is implemented.
@@ -184,4 +184,4 @@ Architecture work is complete only when Codex can provide:
 
 ## 16. Public product reference
 
-At the owner's request, [Kantan News](https://kantan.news/) was inspected as an additional product reference on 2026-10-27. A second pass accessed its public About, Terms and Privacy content through the same unauthenticated endpoints used by its frontend, plus a single public news item. Its Terms explicitly state editorial oversight; its Privacy policy distinguishes locally processed assistant queries from news-production processing with external-provider fallback. These are publisher declarations, not independently verified enforcement. Live visual rendering remained unavailable after retry; backend source, source permissions and content accuracy were not verified. See the [Kantan review and evidence](docs/technology-comparison.md#kantan-news-public-product-reference). Its features do not automatically expand MVP scope.
+At the owner's request, [Kantan News](https://kantan.news/) was inspected as an additional product reference. **The external visitor/content review was completed and closed on 2026-10-28.** It assessed public feed/category and article text, summaries, source/AI disclosure and reader-facing trust cues. Useful patterns are concise news presentation and attribution; sampled health headlines also show why MolecWire must make research stage and outcome definitions clear. Public policy declarations were read in the earlier pass; their enforcement was not independently verified. The review uses public/indexed text and makes no claim of measured visual, mobile or interactive behavior. Backend access is unnecessary for this closed review. See the [assessment and evidence](docs/technology-comparison.md#visitor-assessment-and-closure--2026-10-28). Its features do not automatically expand MVP scope.

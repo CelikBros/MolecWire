@@ -14,6 +14,8 @@ The proposed system discovers permitted sources, records claim-level evidence, a
 - [MVP roadmap](docs/mvp-roadmap.md): delivery gates and the first ten implementation issues with acceptance criteria.
 - [Contributor instructions](AGENTS.md): discovery rules, review boundaries and model preferences.
 
+The [Kantan external visitor review](docs/technology-comparison.md#visitor-assessment-and-closure--2026-10-28) was completed on 2026-10-28. It records applicable presentation patterns and the importance of clear evidence-stage labels for industry news; it is not a backend or interactive UI audit.
+
 The architecture is a proposal for review. Library versions, hosting, source permissions and launch languages require confirmation before implementation. Do not infer production readiness from the reference projects' source code.
 
 There are no application install, run or test commands yet. Review the planning documents before opening the foundation implementation issue. The repository uses the [Apache 2.0 license](LICENSE); third-party source content requires its own permissions.

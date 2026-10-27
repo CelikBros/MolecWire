@@ -128,4 +128,4 @@ Dependencies: 5–9; response/retention/recovery targets.
 | Correction response targets and restore objectives | 10 | Must be agreed and exercised before launch |
 | Commercial model and sponsored-content policy | Before launch | No subscription/paywall implementation; clear sponsorship labels |
 
-The reassessed Kantan review includes public page/API responses and publisher declarations of editorial oversight and AI processing boundaries. Its backend source and actual control enforcement remain unverified, and visual rendering remains unavailable. It does not replace the source-grounded reference comparison or expand this change into implementation.
+The Kantan external visitor/content review was completed and closed on 2026-10-28. Its final assessment covers public news presentation, attribution and the clarity of evidence-stage/outcome claims; earlier public policy responses provide supporting declarations. Backend and interactive UI behavior are outside the concluded assessment. It does not replace the source-grounded reference comparison or expand this change into implementation.
