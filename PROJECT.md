@@ -3,7 +3,7 @@
 **Status:** Discovery / architecture definition
 **Repository:** `CelikBros/MolecWire`
 **Product:** MolecWire
-**Document version:** 0.6 — 2026-10-28
+**Document version:** 0.7 — 2026-10-28
 **Primary language of this document:** English
 
 > **Discovery update:** Local BioExamine and Kapsora source trees were inspected on 2026-10-27. Both use Go and PostgreSQL/pgx. Findings, concrete paths and limitations are in [technology-comparison.md](docs/technology-comparison.md). Kapsora has a heavily modified worktree; observations are not a clean-release or production audit. [Architecture](docs/architecture.md) and the [first ten implementation issues](docs/mvp-roadmap.md) are proposals for review. No application is implemented.
@@ -193,3 +193,5 @@ The first design review connects three screens: the public homepage, source-link
 The agreed public homepage direction is a calm, single-column news feed with short headlines, two-to-three-line summaries, date and source metadata, and minimal topic filters plus search. Readers should explicitly load more stories rather than encounter automatic infinite scrolling. The responsive layout should remain readable on desktop and mobile. Use an off-white `#F7F7F4` background, anthracite `#252A30` text and limited navy `#233B63` accents; green/teal is not the default brand accent. Earlier Gazete, Bülten and Dergi explorations are historical and superseded by this direction. Article and editorial workspaces still need detailed review. This is a homepage direction, not approval of the complete product, launch languages or implementation.
 
 The interaction review covers finding a story, inspecting claim support and approving a particular revision. Editing the draft requires new approval and does not silently alter the published article. After design and architecture review, the first implementation slice is manual entry through approved publication/correction; ingestion and AI automation follow through the same services. See [interface design and delivery sequence](docs/architecture.md#7-interface-design-and-first-review--2026-10-28).
+
+Static desktop/mobile proposals for article detail and the editorial workspace now follow the same neutral palette. Article reading keeps source context, unknowns and correction history in the content flow. Editorial review separates content, evidence and the exact-package approval/publication decisions, with published v2 retained while draft v3 is reviewed. These two screen proposals await feedback; preparing them does not constitute implementation or deployment approval.

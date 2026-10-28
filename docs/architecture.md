@@ -149,6 +149,15 @@ The homepage is an editorial reading surface, not an operational dashboard. The 
 
 Earlier Gazete, Bülten and Dergi alternatives were exploratory and are superseded by the agreed calm-feed direction above. Treat them as design history, not pending choices. The connected article-detail and editorial-workspace designs still require detailed review before their visual hierarchy is settled.
 
+### Connected screen proposals
+
+Desktop/mobile concept images now extend the agreed feed palette to two connected screens. These are static proposals for feedback, not approved final layouts or working software:
+
+- **Article detail:** one comfortable reading column, short lead and publication/revision metadata, a visible source-type/independence line, concise body sections, source/evidence summaries, explicit unknowns and correction history. Mobile retains the reading order without a fixed overlay. The fictional example presents a company's future capacity plan, not achieved production; its timeline, financing and permissions remain unknown.
+- **Editorial workspace:** desktop uses a broad content editor and a narrower evidence/decision panel; mobile switches between Content, Evidence and Decision. The example distinguishes published v2 from draft v3. The reviewed package identifies revision, language, evidence-package version and assessment version. An editor marking the review checkbox does not itself approve or publish: approval is explicit, and publication remains a separate action for the same approved package. An altered package requires another review while the existing public revision remains intact.
+
+Source type, independent support and information gaps are displayed separately. The concept does not claim that the checkbox or disabled publication control implements server-side authorization; those remain implementation and test requirements.
+
 ### Prototype behavior and limits
 
 The earlier local interactive prototype models screen navigation, search/category filtering, story/claim selection and simulated exact-revision approval/publication. It remains a historical interaction study; the current calm-feed preview is a static design image and does not establish working application behavior. All example stories, organizations and sources are fictional; Turkish is a review example, not a committed launch-language decision. Fictional source summaries do not use invented real-world source URLs.
