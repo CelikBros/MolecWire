@@ -145,6 +145,18 @@ The three connected review screens are:
 
 The homepage is an editorial reading surface, not an operational dashboard. The newsroom is a work surface, not a second public feed. Avoid adding comments, reward systems, subscriptions or audio/video while validating this primary flow.
 
+### Homepage directions offered for selection
+
+Three alternatives use the same fictional stories, source limitations and local search/category behavior. The choice is about hierarchy and reading density, not different product scope:
+
+| Direction | Layout | Best fit |
+|---|---|---|
+| Gazete | Warm paper, serif lead, source sidebar and ruled news rows | Recommended starting point: editorial identity with readable evidence context |
+| Bülten | Compact masthead, sans-serif hierarchy and dense chronological rows with source metadata | Frequent professional scanning of many sector developments |
+| Dergi | Large typographic lead, asymmetric story blocks and restrained copper accents | Stronger publication identity and a more spacious discovery experience |
+
+Present one complete responsive homepage at a time in the design comparison. All adapt to light/dark appearance; mobile layouts reflow instead of shrinking text. **The owner has not selected a direction.** After selection, apply that visual system consistently to article detail and the editorial workspace; do not treat the initial Gazete recommendation as approval.
+
 ### Prototype behavior and limits
 
 The conversation prototype supports screen navigation, local search/category filtering, story/claim selection and a simulated exact-revision approval/publication flow. Its stories, organizations and sources are explicitly fictional; Turkish is a review example, not a committed launch-language decision. Fictional source summaries open locally and do not use invented real-world source URLs.

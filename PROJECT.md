@@ -190,4 +190,6 @@ At the owner's request, [Kantan News](https://kantan.news/) was inspected as an 
 
 The first design review connects three screens: the public homepage, source-linked article detail and editorial review workspace. Use an editorial visual language with restrained color, clear typography and evidence visible in the reading flow. The design prototype uses fictional stories/sources and Turkish sample copy; launch languages remain undecided.
 
+For visual direction selection, three homepage alternatives are offered on identical sample content: **Gazete**, **Bülten** and **Dergi**. Gazete is the initial recommendation; the owner's selection is pending. The selected visual language will then guide the article and newsroom screens.
+
 The interaction review covers finding a story, inspecting claim support and approving a particular revision. Editing the draft requires new approval and does not silently alter the published article. After design and architecture review, the first implementation slice is manual entry through approved publication/correction; ingestion and AI automation follow through the same services. See [interface design and delivery sequence](docs/architecture.md#7-interface-design-and-first-review--2026-10-28).
