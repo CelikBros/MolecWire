@@ -2,7 +2,7 @@
 
 MolecWire is a planned multilingual news and intelligence platform for the pharmaceutical and chemical industries, with emphasis on APIs, raw materials, manufacturing, regulation and supply chains.
 
-**Status: architecture review, 2026-10-27. No application has been implemented.**
+**Status: architecture review and local design prototype, 2026-10-28.**
 
 The proposed system discovers permitted sources, records claim-level evidence, assists editors with drafts and publishes only after human approval. Inbound email and manual submissions enter the same review workflow. Corrections, retractions and publication decisions remain auditable.
 
@@ -18,4 +18,8 @@ The [Kantan external visitor review](docs/technology-comparison.md#visitor-asses
 
 The architecture is a proposal for review. Library versions, hosting, source permissions and launch languages require confirmation before implementation. Do not infer production readiness from the reference projects' source code.
 
-There are no application install, run or test commands yet. Review the planning documents before opening the foundation implementation issue. The repository uses the [Apache 2.0 license](LICENSE); third-party source content requires its own permissions.
+## Local design prototype
+
+The [prototype](work/molecwire-prototype/README.md) connects the calm feed, article detail and editorial review screens using fictional browser-local data. Start it with `node work/molecwire-prototype/server.cjs --port 4318`, then open `http://127.0.0.1:4318/`. It simulates revision approval/publication for design review; it does not implement production authentication, persistence or the Go/PostgreSQL application.
+
+Review the planning documents before opening the foundation implementation issue. The repository uses the [Apache 2.0 license](LICENSE); third-party source content requires its own permissions.

@@ -3,10 +3,10 @@
 **Status:** Discovery / architecture definition
 **Repository:** `CelikBros/MolecWire`
 **Product:** MolecWire
-**Document version:** 0.7 — 2026-10-28
+**Document version:** 0.8 — 2026-10-28
 **Primary language of this document:** English
 
-> **Discovery update:** Local BioExamine and Kapsora source trees were inspected on 2026-10-27. Both use Go and PostgreSQL/pgx. Findings, concrete paths and limitations are in [technology-comparison.md](docs/technology-comparison.md). Kapsora has a heavily modified worktree; observations are not a clean-release or production audit. [Architecture](docs/architecture.md) and the [first ten implementation issues](docs/mvp-roadmap.md) are proposals for review. No application is implemented.
+> **Discovery update:** Local BioExamine and Kapsora source trees were inspected on 2026-10-27. Both use Go and PostgreSQL/pgx. Findings, concrete paths and limitations are in [technology-comparison.md](docs/technology-comparison.md). Kapsora has a heavily modified worktree; observations are not a clean-release or production audit. [Architecture](docs/architecture.md) and the [first ten implementation issues](docs/mvp-roadmap.md) are proposals for review. A local browser-only design prototype is available; the production Go/PostgreSQL application is not implemented.
 
 ## 1. Vision
 
@@ -195,3 +195,5 @@ The agreed public homepage direction is a calm, single-column news feed with sho
 The interaction review covers finding a story, inspecting claim support and approving a particular revision. Editing the draft requires new approval and does not silently alter the published article. After design and architecture review, the first implementation slice is manual entry through approved publication/correction; ingestion and AI automation follow through the same services. See [interface design and delivery sequence](docs/architecture.md#7-interface-design-and-first-review--2026-10-28).
 
 Static desktop/mobile proposals for article detail and the editorial workspace now follow the same neutral palette. Article reading keeps source context, unknowns and correction history in the content flow. Editorial review separates content, evidence and the exact-package approval/publication decisions, with published v2 retained while draft v3 is reviewed. These two screen proposals await feedback; preparing them does not constitute implementation or deployment approval.
+
+The subsequent [local design-review prototype](work/molecwire-prototype/README.md) connects feed, article and editor screens with fictional data. It supports search/categories/load-more/bookmarks and simulates complete-package approval, publication, source changes and draft/public separation. Editorial state resets on refresh; only bookmark IDs persist locally. This bounded prototype does not complete the Go/PostgreSQL foundation or authorize deployment.

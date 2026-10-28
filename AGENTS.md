@@ -14,7 +14,7 @@ Standing user preference, recorded 2026-09-26, applies across projects unless ch
 
 Read [PROJECT.md](PROJECT.md), [architecture](docs/architecture.md), [comparison](docs/technology-comparison.md) and [roadmap](docs/mvp-roadmap.md) before proposing changes. The discovery assignment authorizes planning documentation only; do not scaffold or implement the application until architecture review and a subsequent implementation instruction.
 
-For this assignment, modify only `README.md`, `PROJECT.md`, `AGENTS.md`, `docs/architecture.md`, `docs/technology-comparison.md`, and `docs/mvp-roadmap.md`. Preserve the supplied first prompt. Work on a feature branch; commit and open a review PR when access permits. Never merge or deploy without explicit approval.
+The initial discovery assignment is limited to `README.md`, `PROJECT.md`, `AGENTS.md`, `docs/architecture.md`, `docs/technology-comparison.md`, and `docs/mvp-roadmap.md`. Subsequent owner-requested design work additionally permits local prototype files under `work/molecwire-prototype/` and design assets under `work/`. Keep the prototype a browser-only design-review simulation: fictional fixtures, no external services or production backend. The Go/PostgreSQL implementation remains subject to architecture review and a subsequent implementation instruction. Preserve the supplied first prompt. Work on a feature branch; commit and open a review PR when access permits. Never merge or deploy without explicit approval.
 
 ## Evidence and reference projects
 

@@ -2,6 +2,8 @@
 
 Date: 2026-10-27. Status: proposed; implementation starts only after architecture review. See [architecture](architecture.md), [evidence comparison](technology-comparison.md) and [charter](../PROJECT.md).
 
+Design-review update, 2026-10-28: a [browser-local prototype](../work/molecwire-prototype/README.md) now connects the selected feed, article and editorial screens using fictional fixtures. This precedes issue 1 and does not complete the Go/PostgreSQL foundation, production authorization or deployment work.
+
 ## Delivery gates
 
 1. **Architecture review:** accept domain boundaries, stack candidates, publication invariants and explicit unknowns. Local reference access is verified; deployed environments and their test results are not verified.
