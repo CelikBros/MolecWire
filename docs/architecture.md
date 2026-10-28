@@ -1,6 +1,6 @@
 # MolecWire architecture proposal
 
-Date: 2026-10-27. Status: review proposal, not implemented. Product scope is in [PROJECT.md](../PROJECT.md); evidence is in [technology-comparison.md](technology-comparison.md). Source inspection establishes conventions, not operational success.
+Date: 2026-10-28. Status: review proposal, not implemented; a separate interface prototype illustrates the proposed design. Product scope is in [PROJECT.md](../PROJECT.md); evidence is in [technology-comparison.md](technology-comparison.md). Source inspection establishes conventions, not operational success.
 
 ## 1. Decisions and tradeoffs
 
@@ -128,3 +128,36 @@ Start with a small deployment using TLS, least-privilege database/object-store a
 Prompt separation alone cannot eliminate injection. A compromised model response must still lack capabilities to fetch arbitrary URLs, change permissions or publish. No quantitative accuracy claim is made before evaluation.
 
 Track ingestion lag/failures, duplicate rate, evidence coverage, editor review effort, unsupported/corrected claims, queue age, publish errors, model latency/cost and correction response time. Use representative normal, conflicting, multilingual and adversarial fixtures; define owner-approved thresholds before launch. CI should cover formatting, lint/vet, unit/race tests, PostgreSQL migrations and integration invariants, contract checks, frontend build and critical workflow checks. Tests and deployment health of reference projects were not established by this discovery.
+
+## 7. Interface design and first review — 2026-10-28
+
+### Direction and information hierarchy
+
+Design MolecWire as a professional pharmaceutical/chemical publication with inspectable evidence. The first visual proposal uses warm paper, dark ink, a restrained petrol-green accent, fine dividers, serif news headlines and a sans-serif interface. Product colors follow light/dark appearance; contrast, clear type and textual state labels take priority over decoration. No truth percentage, AI-verification badge, decorative market chart or stock-photo hero is needed.
+
+The three connected review screens are:
+
+| Screen | Primary task | Proposed hierarchy |
+|---|---|---|
+| Public homepage | Find relevant developments quickly | Publication masthead and search; focused sector categories; one lead story with concise summary/source type; secondary developments and a compact recent-news list. Source type and publication time accompany the story rather than competing with the headline. |
+| Article detail | Understand the report and inspect its support | Headline, content type and concise summary; publication/update metadata; what is reported, why it matters and what remains unknown; visible source/evidence references; correction/revision history. Research stage and measured outcome belong next to consequential claims. |
+| Editorial workspace | Review and approve an exact content package | Intake/draft/review context; selected draft and revision; editable content; claim/evidence workspace; separate credibility, corroboration, completeness and readiness assessments; human approval and a distinct publication action. |
+
+The homepage is an editorial reading surface, not an operational dashboard. The newsroom is a work surface, not a second public feed. Avoid adding comments, reward systems, subscriptions or audio/video while validating this primary flow.
+
+### Prototype behavior and limits
+
+The conversation prototype supports screen navigation, local search/category filtering, story/claim selection and a simulated exact-revision approval/publication flow. Its stories, organizations and sources are explicitly fictional; Turkish is a review example, not a committed launch-language decision. Fictional source summaries open locally and do not use invented real-world source URLs.
+
+Start the editorial example with published v2 and draft v3. Approval applies to v3 only; creating a changed v4 requires new review. Published v2 or v3 remains visible until an explicitly approved replacement is published. The simulation represents interface behavior only: server-side authorization, immutability, transactionality and concurrency remain implementation requirements, not capabilities established by the prototype.
+
+Use a single column for narrow news layouts and stack or switch between content/evidence/decision sections in the newsroom. Wrap category controls instead of clipping them. Keep important source information available without hover, visible keyboard focus and practical touch targets. Do not compress three desktop columns into unreadable mobile text.
+
+### Delivery sequence
+
+1. **Design review:** show the homepage, article and editorial workspace together as connected prototype screens. Assess reading hierarchy, evidence visibility and approval behavior; revise concrete layout/content findings.
+2. **First functional slice:** following architecture review and an implementation instruction, build manual entry → claims/evidence → exact-package human approval → Go-rendered public article → approved correction. Use the existing Go/PostgreSQL direction and focused tests for the publication invariants.
+3. **Automation:** connect permitted RSS/APIs, secure inbound email and Go AI draft assistance to those same application services. Email and AI remain MVP exit requirements, without blocking the first manual flow.
+4. **Launch verification:** exercise access control, approval invalidation, job recovery, public visibility, correction/retraction distribution and recovery objectives. Confirm languages, pilot-source permissions and operating providers before launch.
+
+The prototype is a design-review deliverable, not approval to implement the application, merge the documentation PR or deploy a service.

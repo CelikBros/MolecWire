@@ -3,7 +3,7 @@
 **Status:** Discovery / architecture definition
 **Repository:** `CelikBros/MolecWire`
 **Product:** MolecWire
-**Document version:** 0.4 — 2026-10-28
+**Document version:** 0.5 — 2026-10-28
 **Primary language of this document:** English
 
 > **Discovery update:** Local BioExamine and Kapsora source trees were inspected on 2026-10-27. Both use Go and PostgreSQL/pgx. Findings, concrete paths and limitations are in [technology-comparison.md](docs/technology-comparison.md). Kapsora has a heavily modified worktree; observations are not a clean-release or production audit. [Architecture](docs/architecture.md) and the [first ten implementation issues](docs/mvp-roadmap.md) are proposals for review. No application is implemented.
@@ -185,3 +185,9 @@ Architecture work is complete only when Codex can provide:
 ## 16. Public product reference
 
 At the owner's request, [Kantan News](https://kantan.news/) was inspected as an additional product reference. **The external visitor/content review was completed and closed on 2026-10-28.** It assessed public feed/category and article text, summaries, source/AI disclosure and reader-facing trust cues. Useful patterns are concise news presentation and attribution; sampled health headlines also show why MolecWire must make research stage and outcome definitions clear. Public policy declarations were read in the earlier pass; their enforcement was not independently verified. The review uses public/indexed text and makes no claim of measured visual, mobile or interactive behavior. Backend access is unnecessary for this closed review. See the [assessment and evidence](docs/technology-comparison.md#visitor-assessment-and-closure--2026-10-28). Its features do not automatically expand MVP scope.
+
+## 17. Proposed interface and design process
+
+The first design review connects three screens: the public homepage, source-linked article detail and editorial review workspace. Use an editorial visual language with restrained color, clear typography and evidence visible in the reading flow. The design prototype uses fictional stories/sources and Turkish sample copy; launch languages remain undecided.
+
+The interaction review covers finding a story, inspecting claim support and approving a particular revision. Editing the draft requires new approval and does not silently alter the published article. After design and architecture review, the first implementation slice is manual entry through approved publication/correction; ingestion and AI automation follow through the same services. See [interface design and delivery sequence](docs/architecture.md#7-interface-design-and-first-review--2026-10-28).
