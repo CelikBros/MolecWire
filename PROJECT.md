@@ -3,7 +3,7 @@
 **Status:** Discovery / architecture definition
 **Repository:** `CelikBros/MolecWire`
 **Product:** MolecWire
-**Document version:** 0.5 — 2026-10-28
+**Document version:** 0.6 — 2026-10-28
 **Primary language of this document:** English
 
 > **Discovery update:** Local BioExamine and Kapsora source trees were inspected on 2026-10-27. Both use Go and PostgreSQL/pgx. Findings, concrete paths and limitations are in [technology-comparison.md](docs/technology-comparison.md). Kapsora has a heavily modified worktree; observations are not a clean-release or production audit. [Architecture](docs/architecture.md) and the [first ten implementation issues](docs/mvp-roadmap.md) are proposals for review. No application is implemented.
@@ -190,6 +190,6 @@ At the owner's request, [Kantan News](https://kantan.news/) was inspected as an 
 
 The first design review connects three screens: the public homepage, source-linked article detail and editorial review workspace. Use an editorial visual language with restrained color, clear typography and evidence visible in the reading flow. The design prototype uses fictional stories/sources and Turkish sample copy; launch languages remain undecided.
 
-For visual direction selection, three homepage alternatives are offered on identical sample content: **Gazete**, **Bülten** and **Dergi**. Gazete is the initial recommendation; the owner's selection is pending. The selected visual language will then guide the article and newsroom screens.
+The agreed public homepage direction is a calm, single-column news feed with short headlines, two-to-three-line summaries, date and source metadata, and minimal topic filters plus search. Readers should explicitly load more stories rather than encounter automatic infinite scrolling. The responsive layout should remain readable on desktop and mobile. Use an off-white `#F7F7F4` background, anthracite `#252A30` text and limited navy `#233B63` accents; green/teal is not the default brand accent. Earlier Gazete, Bülten and Dergi explorations are historical and superseded by this direction. Article and editorial workspaces still need detailed review. This is a homepage direction, not approval of the complete product, launch languages or implementation.
 
 The interaction review covers finding a story, inspecting claim support and approving a particular revision. Editing the draft requires new approval and does not silently alter the published article. After design and architecture review, the first implementation slice is manual entry through approved publication/correction; ingestion and AI automation follow through the same services. See [interface design and delivery sequence](docs/architecture.md#7-interface-design-and-first-review--2026-10-28).

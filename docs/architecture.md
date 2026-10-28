@@ -133,33 +133,25 @@ Track ingestion lag/failures, duplicate rate, evidence coverage, editor review e
 
 ### Direction and information hierarchy
 
-Design MolecWire as a professional pharmaceutical/chemical publication with inspectable evidence. The first visual proposal uses warm paper, dark ink, a restrained petrol-green accent, fine dividers, serif news headlines and a sans-serif interface. Product colors follow light/dark appearance; contrast, clear type and textual state labels take priority over decoration. No truth percentage, AI-verification badge, decorative market chart or stock-photo hero is needed.
+Design MolecWire as a professional pharmaceutical/chemical publication with inspectable evidence. The agreed homepage direction is a calm, single-column news feed: short headlines, two-to-three-line summaries, date/source metadata, minimal topic filters and search, and an explicit load-more control instead of automatic infinite scrolling. Keep it readable on desktop and mobile. The agreed neutral palette is off-white `#F7F7F4`, anthracite `#252A30` and limited navy `#233B63` accents; green/teal is not the default brand accent. Preserve contrast, clear type and textual state labels over decoration. No truth percentage, AI-verification badge, decorative market chart or stock-photo hero is needed. Article and editorial workspace details remain for review; this homepage choice does not decide launch languages or authorize implementation.
 
 The three connected review screens are:
 
 | Screen | Primary task | Proposed hierarchy |
 |---|---|---|
-| Public homepage | Find relevant developments quickly | Publication masthead and search; focused sector categories; one lead story with concise summary/source type; secondary developments and a compact recent-news list. Source type and publication time accompany the story rather than competing with the headline. |
+| Public homepage | Find relevant developments quickly | Compact publication masthead and search; a few topic filters; one column of consistently sized news entries with headline, brief summary, time and source. Details open on demand; readers explicitly load the next group of stories. |
 | Article detail | Understand the report and inspect its support | Headline, content type and concise summary; publication/update metadata; what is reported, why it matters and what remains unknown; visible source/evidence references; correction/revision history. Research stage and measured outcome belong next to consequential claims. |
 | Editorial workspace | Review and approve an exact content package | Intake/draft/review context; selected draft and revision; editable content; claim/evidence workspace; separate credibility, corroboration, completeness and readiness assessments; human approval and a distinct publication action. |
 
 The homepage is an editorial reading surface, not an operational dashboard. The newsroom is a work surface, not a second public feed. Avoid adding comments, reward systems, subscriptions or audio/video while validating this primary flow.
 
-### Homepage directions offered for selection
+### Homepage direction status
 
-Three alternatives use the same fictional stories, source limitations and local search/category behavior. The choice is about hierarchy and reading density, not different product scope:
-
-| Direction | Layout | Best fit |
-|---|---|---|
-| Gazete | Warm paper, serif lead, source sidebar and ruled news rows | Recommended starting point: editorial identity with readable evidence context |
-| Bülten | Compact masthead, sans-serif hierarchy and dense chronological rows with source metadata | Frequent professional scanning of many sector developments |
-| Dergi | Large typographic lead, asymmetric story blocks and restrained copper accents | Stronger publication identity and a more spacious discovery experience |
-
-Present one complete responsive homepage at a time in the design comparison. All adapt to light/dark appearance; mobile layouts reflow instead of shrinking text. **The owner has not selected a direction.** After selection, apply that visual system consistently to article detail and the editorial workspace; do not treat the initial Gazete recommendation as approval.
+Earlier Gazete, Bülten and Dergi alternatives were exploratory and are superseded by the agreed calm-feed direction above. Treat them as design history, not pending choices. The connected article-detail and editorial-workspace designs still require detailed review before their visual hierarchy is settled.
 
 ### Prototype behavior and limits
 
-The conversation prototype supports screen navigation, local search/category filtering, story/claim selection and a simulated exact-revision approval/publication flow. Its stories, organizations and sources are explicitly fictional; Turkish is a review example, not a committed launch-language decision. Fictional source summaries open locally and do not use invented real-world source URLs.
+The earlier local interactive prototype models screen navigation, search/category filtering, story/claim selection and simulated exact-revision approval/publication. It remains a historical interaction study; the current calm-feed preview is a static design image and does not establish working application behavior. All example stories, organizations and sources are fictional; Turkish is a review example, not a committed launch-language decision. Fictional source summaries do not use invented real-world source URLs.
 
 Start the editorial example with published v2 and draft v3. Approval applies to v3 only; creating a changed v4 requires new review. Published v2 or v3 remains visible until an explicitly approved replacement is published. The simulation represents interface behavior only: server-side authorization, immutability, transactionality and concurrency remain implementation requirements, not capabilities established by the prototype.
 
